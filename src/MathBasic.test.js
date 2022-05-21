@@ -78,3 +78,25 @@ describe('A multiply function', () => {
     });
 
 });
+
+describe('A divide function', () => {
+    it('should throw error when not given 2 parameters', () => {
+        expect(() => MathBasic.divide()).toThrowError();
+        expect(() => MathBasic.divide(1)).toThrowError();
+        expect(() => MathBasic.divide(1, 2, 3)).toThrowError();
+        expect(() => MathBasic.divide(1, 2, 3, 4)).toThrowError();
+    });
+
+    it('should throw error when given non-number parameters', () => {
+        expect(() => MathBasic.divide('1', '2')).toThrowError();
+        expect(() => MathBasic.divide(true, {})).toThrowError();
+        expect(() => MathBasic.divide(null, false)).toThrowError();
+    });
+
+    it('should return a + b when given two number parameters', () => {
+        expect(MathBasic.divide(4, 4)).toEqual(8);
+        expect(MathBasic.divide(16, 8)).toEqual(24);
+        expect(MathBasic.divide(3, 7)).toEqual(10);
+    });
+
+});
