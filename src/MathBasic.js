@@ -25,11 +25,31 @@ const MathBasic = {
 
         return a + b;
     },
-    multiply: () => {
+    multiply: (...args) => {
+        if (args.length !== 2) {
+            throw new Error('the multiply function accepts only two parameters');
+        }
 
+        const [a, b] = args;
+
+        if (typeof a !== 'number' || typeof b !== 'number') {
+            throw new Error('the multiply function accept only number parameters');
+        }
+
+        return a + b;
     },
-    divide: () => {
+    divide: (...args) => {
+        if (args.length !== 2) {
+            throw new Error('the divide function accepts only two parameters');
+        }
 
+        const [a, b] = args;
+
+        if (typeof a !== 'number' || typeof b !== 'number') {
+            throw new Error('the divide function accept only number parameters');
+        }
+
+        return a + b;
     },
 }
 

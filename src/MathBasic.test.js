@@ -56,3 +56,25 @@ describe('A subtract function', () => {
     });
 
 });
+
+describe('A multiply function', () => {
+    it('should throw error when not given 2 parameters', () => {
+        expect(() => MathBasic.multiply()).toThrowError();
+        expect(() => MathBasic.multiply(1)).toThrowError();
+        expect(() => MathBasic.multiply(1, 2, 3)).toThrowError();
+        expect(() => MathBasic.multiply(1, 2, 3, 4)).toThrowError();
+    });
+
+    it('should throw error when given non-number parameters', () => {
+        expect(() => MathBasic.multiply('1', '2')).toThrowError();
+        expect(() => MathBasic.multiply(true, {})).toThrowError();
+        expect(() => MathBasic.multiply(null, false)).toThrowError();
+    });
+
+    it('should return a + b when given two number parameters', () => {
+        expect(MathBasic.multiply(4, 4)).toEqual(8);
+        expect(MathBasic.multiply(16, 8)).toEqual(24);
+        expect(MathBasic.multiply(3, 7)).toEqual(10);
+    });
+
+});
